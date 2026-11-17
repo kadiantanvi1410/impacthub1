@@ -1,6 +1,6 @@
 @echo off
 title ImpactHub Local Server
-cd /d "C:\Users\SANDEEP\OneDrive\Desktop\community services"
+cd /d "%~dp0"
 echo ========================================================
 echo   Starting ImpactHub Non-Profit Platform on Localhost
 echo ========================================================

@@ -74,7 +74,7 @@ export function CampaignDetail() {
   };
 
   const handleShare = () => {
-    const url = `${window.location.origin}/campaigns/${campaign.id}/public`;
+    const url = `${window.location.origin}${window.location.pathname}#/campaigns/${campaign.id}/public`;
     navigator.clipboard.writeText(url);
     setCopyFeedback(true);
     setTimeout(() => setCopyFeedback(false), 2000);

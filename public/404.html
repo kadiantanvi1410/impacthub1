@@ -4,19 +4,16 @@
     <meta charset="utf-8">
     <title>ImpactHub</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 0;
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      // Redirect direct sub-paths on GitHub Pages to HashRouter route
+      var path = window.location.pathname;
+      var segments = path.split('/').filter(Boolean);
+      // segments[0] is the repo name (e.g., 'impacthub1')
+      var repo = segments.length > 0 ? segments[0] : '';
+      var rest = segments.slice(1).join('/');
+      var search = window.location.search || '';
+      var hash = window.location.hash || '';
+      var target = '/' + (repo ? repo + '/' : '') + '#/' + rest + search + hash;
+      window.location.replace(target);
     </script>
   </head>
   <body>

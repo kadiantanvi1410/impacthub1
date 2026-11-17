@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createHashRouter, Navigate } from 'react-router-dom';
 import { AppShell } from '../components/layout/AppShell';
 import { Dashboard } from '../pages/Dashboard';
 import { Fundraising } from '../pages/Fundraising';
@@ -14,7 +14,7 @@ import { Reports } from '../pages/Reports';
 import { Settings } from '../pages/Settings';
 import { Login } from '../pages/Login';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   // Admin Login & Email Verification
   {
     path: '/login',

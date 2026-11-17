@@ -1,6 +1,6 @@
 @echo off
 title Push ImpactHub to GitHub
-cd /d "C:\Users\SANDEEP\OneDrive\Desktop\community services"
+cd /d "%~dp0"
 echo ========================================================
 echo    Push ImpactHub to Your GitHub Repository
 echo ========================================================
