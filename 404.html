@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ImpactHub</title>
+    <script type="text/javascript">
+      // Redirect direct sub-paths on GitHub Pages to HashRouter route
+      var path = window.location.pathname;
+      var segments = path.split('/').filter(Boolean);
+      // segments[0] is the repo name (e.g., 'impacthub1')
+      var repo = segments.length > 0 ? segments[0] : '';
+      var rest = segments.slice(1).join('/');
+      var search = window.location.search || '';
+      var hash = window.location.hash || '';
+      var target = '/' + (repo ? repo + '/' : '') + '#/' + rest + search + hash;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
